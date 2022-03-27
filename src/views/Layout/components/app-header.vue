@@ -8,7 +8,7 @@ import appHeaderNavVue from "./app-header-nav.vue";
     <div class="container">
       <h1 class="logo">
         <RouterLink to="/">小兔鲜</RouterLink>
-        <appHeaderNavVue />
+        <!-- <appHeaderNavVue /> -->
       </h1>
       <ul class="app-header-nav">
         <li class="home">
