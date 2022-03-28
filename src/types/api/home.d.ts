@@ -4,7 +4,7 @@ export type ApiRes<T> = {
   result: T;
 };
 
-// 分类数据单项类型
+// 商品类似数据结构
 export type GoodsItem = {
   desc: string;
   id: string;
@@ -40,5 +40,7 @@ export type BannerItem = {
   type: string
 }
 export type BannerList = BannerItem[]
+
+
 
 
