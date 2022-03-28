@@ -31,3 +31,14 @@ export type CategoryItem = {
 
 // 分类数据列表类型
 export type CategoryList = CategoryItem[];
+
+// banner
+export type BannerItem = {
+  hrefUrl: string,
+  id: string,
+  imgUrl: string,
+  type: string
+}
+export type BannerList = BannerItem[]
+
+
