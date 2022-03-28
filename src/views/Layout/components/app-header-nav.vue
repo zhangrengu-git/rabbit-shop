@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
 import useStore from "@/stores";
-const { home} = useStore()
+const { home } = useStore()
 home.getAllCategory()
 </script>
 
@@ -10,9 +10,16 @@ home.getAllCategory()
     <li class="home">
       <RouterLink to="/">首页</RouterLink>
     </li>
-    <li v-for="item in home.categoryList" :key="item.id">
-      <a href="#">{{item.name}}</a>
-    </li>
+    <template v-if="home.categoryList.length > 0">
+      <li v-for="item in home.categoryList" :key="item.id">
+        <a href="#">{{ item.name }}</a>
+      </li>
+    </template>
+    <template v-else>
+      <li v-for="i in 9" :key="i">
+        <XtxSkeleton :width="50" :height="32" />
+      </li>
+    </template>
   </ul>
 </template>
 

@@ -15,7 +15,7 @@ const newCategoryList = computed(() => {
 
 <template>
   <div class="home-category">
-    <ul class="menu">
+    <ul class="menu" v-if="newCategoryList.length > 0">
       <li v-for="i in newCategoryList" :key="i.id">
         <RouterLink to="/">{{ i.name }}</RouterLink>
         <RouterLink to="/" v-for="item in i.children" :key="item.id">{{ item.name }}</RouterLink>
@@ -42,6 +42,14 @@ const newCategoryList = computed(() => {
             </li>
           </ul>
         </div>
+      </li>
+    </ul>
+    <!-- 骨架 -->
+    <ul class="menu" v-else>
+      <li v-for="i in 9" :key="i">
+        <XtxSkeleton :width="40" :height="20" style="margin-right: 5px" bg="rgba(255,255,255,0.2)" />
+        <XtxSkeleton :width="50" :height="20" bg="rgba(255,255,255,0.2)" style="margin-right: 5px" />
+        <XtxSkeleton :width="50" :height="20" bg="rgba(255,255,255,0.2)" />
       </li>
     </ul>
   </div>
